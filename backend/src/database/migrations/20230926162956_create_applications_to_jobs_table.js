@@ -9,7 +9,7 @@ exports.up = function (knex) {
     table.increments("id").primary();
     table.integer("candidate_id").unsigned().notNullable();
     table.foreign("candidate_id").references("candidates.id");
-    table.integer("job_position_id").unsigned().notNullable();
+    table.integer("job_position_id").notNullable();
     table.foreign("job_position_id").references("job_positions.id");
   });
 };
